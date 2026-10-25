@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Picklymart — Smart Picks. Smart Life.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" data-action="home" aria-label="Picklymart home">
+      <span class="brand-mark">♧</span><span class="brand-name">Pickly<span>mart</span><small>Smart Picks . Smart Life</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button data-action="categories">Category</button><button data-action="contact">Contact Us</button><button data-action="wholesale">Wholesale</button>
+    </nav>
+    <div class="header-tools">
+      <button class="seller-btn" data-action="seller">♙ &nbsp; Join as Seller</button>
+      <button class="icon-btn" data-action="search" aria-label="Search">⌕</button>
+      <button class="cart-top" data-action="cart" aria-label="Open cart"><span class="cart-icon">🛒</span><strong id="headerTotal">৳30.00</strong><small>(<span id="headerItems">1</span> Items)</small></button>
+      <span class="header-divider"></span>
+      <button class="profile-icon" data-action="login" aria-label="Login">♙</button>
+      <button class="account-link" data-action="login">Login</button><span class="pipe">|</span><button class="account-link" data-action="register">Registration</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="top-layout">
+      <aside class="category-sidebar" id="categorySidebar" aria-label="Product categories">
+        <button data-category="Robotics Kits & Boards"><span>🌐</span>Robotics Kits &amp; Boards</button>
+        <button data-category="3D Printing"><span>🌐</span>3D Printing</button>
+        <button data-category="Drones & Drone Accessories"><span>🌐</span>Drones &amp; Drone Accessories</button>
+        <button data-category="Electronic Components & Sensors"><span>🌐</span>Electronic Components &amp; Sensors</button>
+        <button data-category="Tools & Lab Equipment"><span>🌐</span>Tools &amp; Lab Equipment</button>
+        <button data-category="Rubik’s Cubes & Speedcubing"><span>🌐</span>Rubik’s Cubes &amp; Speedcubing</button>
+        <button data-category="Robotics Accessories"><span>🌐</span>Robotics Accessories</button>
+        <button data-category="computer"><span>🖥️</span>computer</button>
+        <button data-category="Home Decorm"><span>▧</span>Home Decorm</button>
+        <button data-category="Pos Roll"><span>◌</span>Pos Roll</button>
+        <button data-category="Thermal Sticker"><span>▤</span>Thermal Sticker</button>
+      </aside>
+
+      <div class="hero-banner" id="wholesaleBanner">
+        <div class="hero-copy">
+          <div class="hero-brand">♧ Pickly<span>mart</span><small>Smart Picks . Smart Life</small></div>
+          <p class="eyebrow">— WHOLESALE PROGRAM</p>
+          <h1>Bulk Pricing on<br>Thermal &amp; POS Paper<br>Rolls</h1>
+          <p class="hero-description">Stock your billing counters without the retail markup — volume rates for shops, cafes and businesses that print all day.</p>
+          <button class="quote-btn" data-action="wholesale">Get a Wholesale Quote&nbsp; →</button>
+        </div>
+        <div class="hero-product">
+          <img src="assets/pos-roll-56.png" alt="POS thermal paper roll">
+          <span>Bulk Cartons Available</span><span>MOQ Friendly</span>
+        </div>
+        <div class="banner-foot"><span>WIDTH&nbsp; 57mm / 80mm</span><span>CORE&nbsp; 12mm / 13mm</span><span>CUSTOM&nbsp; Sizes on Request</span><span>PICKLYMART&nbsp; Smart Picks, Smart Life</span></div>
+      </div>
+
+      <aside class="deals">
+        <h2>Todays Deal <span>Hot</span></h2>
+        <div id="dealList"></div>
+      </aside>
+    </section>
+
+    <section class="product-section featured">
+      <div class="section-title"><h2>Featured Products</h2><div class="arrows"><button data-scroll="featuredTrack" data-dir="-1" aria-label="Previous featured products">‹</button><button data-scroll="featuredTrack" data-dir="1" aria-label="Next featured products">›</button></div></div>
+      <div class="product-track" id="featuredTrack"></div>
+    </section>
+
+    <section class="product-section">
+      <div class="section-title"><h2>Best Selling</h2><div class="arrows"><button data-scroll="bestTrack" data-dir="-1" aria-label="Previous best selling">‹</button><button data-scroll="bestTrack" data-dir="1" aria-label="Next best selling">›</button></div></div>
+      <div class="product-track" id="bestTrack"></div>
+    </section>
+
+    <section class="category-showcase" id="robotics">
+      <div class="showcase-art"><span>🤖</span><b>Robotics Kits<br>&amp; Boards</b></div>
+      <div class="showcase-products">
+        <div class="section-title"><h2>Robotics Kits &amp; Boards</h2><button class="view-all" data-category="Robotics Kits & Boards">View All →</button></div>
+        <div class="product-track" id="roboticsTrack"></div>
+      </div>
+    </section>
+
+    <section class="category-showcase">
+      <div class="showcase-art components"><span>⚙️</span><b>Electronic<br>Components</b></div>
+      <div class="showcase-products">
+        <div class="section-title"><h2>Electronic Components &amp; Sensors</h2><button class="view-all" data-category="Electronic Components & Sensors">View All →</button></div>
+        <div class="product-track" id="componentsTrack"></div>
+      </div>
+    </section>
+
+    <section class="product-section all-products" id="allProducts">
+      <div class="section-title"><h2>All Products</h2><form id="searchForm" class="search-inline"><input id="searchInput" placeholder="Search products..." aria-label="Search products"><button>Search</button></form></div>
+      <div class="filter-row"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Robotics Kits & Boards">Robotics Kits &amp; Boards</button><button class="filter" data-filter="Pos Roll">POS Roll</button><button class="filter" data-filter="Electronic Components & Sensors">Components &amp; Sensors</button><select id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="name">Name: A to Z</option></select></div>
+      <div class="all-grid" id="allGrid"></div><p id="noResults" hidden>No products found.</p>
+    </section>
+  </main>
+
+  <section id="subPage" class="sub-page" hidden></section>
+
+  <footer id="footer"><div class="footer-brand">Pickly<span>mart</span></div><p>Smart Picks . Smart Life</p><div><button data-action="contact">Contact Us</button><button data-action="wholesale">Wholesale</button><button data-action="seller">Join as Seller</button></div><small>© 2026 Picklymart. All rights reserved.</small></footer>
+
+  <dialog id="searchDialog" class="modal"><button class="modal-close" data-close="searchDialog">×</button><h2>Search products</h2><form id="modalSearchForm"><input id="modalSearchInput" placeholder="Type a product name..." aria-label="Search products"><button class="green-btn">Search</button></form></dialog>
+  <dialog id="cartDialog" class="modal"><button class="modal-close" data-close="cartDialog">×</button><h2>Your Cart</h2><div id="cartContents"></div><p class="cart-total">Total: <strong id="cartModalTotal">৳0.00</strong></p><button class="green-btn full" data-action="checkout">Proceed to Checkout</button></dialog>
+  <dialog id="accountDialog" class="modal"><button class="modal-close" data-close="accountDialog">×</button><h2 id="accountTitle">Login</h2><form id="accountForm" class="stack-form"><label>Email<input type="email" required placeholder="you@example.com"></label><label>Password<input type="password" minlength="6" required placeholder="At least 6 characters"></label><button class="green-btn" id="accountSubmit">Login</button></form></dialog>
+  <dialog id="infoDialog" class="modal"><button class="modal-close" data-close="infoDialog">×</button><h2 id="infoTitle">Contact Us</h2><p id="infoText"></p><form id="infoForm" class="stack-form"><label>Your name<input required placeholder="Your name"></label><label>Email<input type="email" required placeholder="Email address"></label><label>Message<textarea required placeholder="How can we help?"></textarea></label><button class="green-btn">Submit</button></form></dialog>
+  <dialog id="checkoutDialog" class="modal"><button class="modal-close" data-close="checkoutDialog">×</button><h2>Checkout</h2><form id="checkoutForm" class="stack-form"><label>Full name<input required></label><label>Delivery address<textarea required></textarea></label><label>Phone number<input type="tel" required></label><button class="green-btn">Review order</button></form></dialog>
+  <div id="toast" role="status" class="toast"></div>
+</body>
+</html>
